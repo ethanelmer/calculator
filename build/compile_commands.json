@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/EElme/OneDrive/Documents/GitHub/calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -o CMakeFiles\\calculator.dir\\main.cpp.obj -c C:\\Users\\EElme\\OneDrive\\Documents\\GitHub\\calculator\\calculator\\main.cpp",
+  "file": "C:/Users/EElme/OneDrive/Documents/GitHub/calculator/calculator/main.cpp",
+  "output": "CMakeFiles/calculator.dir/main.cpp.obj"
+}
+]

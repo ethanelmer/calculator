@@ -1,0 +1,3 @@
+C:/Users/EElme/OneDrive/Documents/GitHub/calculator/build/CMakeFiles/calculator.dir
+C:/Users/EElme/OneDrive/Documents/GitHub/calculator/build/CMakeFiles/edit_cache.dir
+C:/Users/EElme/OneDrive/Documents/GitHub/calculator/build/CMakeFiles/rebuild_cache.dir
