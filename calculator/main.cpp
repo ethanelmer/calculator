@@ -68,12 +68,32 @@ float evaluateExpression(std::vector<token>& tokens){
                     tokens[i - 1].value = tokens[i - 1].value * 10 + tokens[i].value;
                     tokens.erase(tokens.begin() + i);
                     i--;
-                } else {
+                } 
+                else {
                     previousNum = false;
                 }
             }
         }
+    if (tokens[i].kind == '.') {
+        // Check if there's a number before the decimal point
+        if (i > 0 && tokens[i - 1].kind == 'n') {
+            // Combine the decimal part with the previous number
+            double decimalValue = 0.1;
+            size_t j = i + 1; // Start from the digit after the decimal point
+            while (j < tokens.size() && tokens[j].kind == 'n') {
+                tokens[i - 1].value += tokens[j].value * decimalValue;
+                decimalValue *= 0.1; // Move to the next decimal place
+                j++;
+            }
+            // Erase the tokens for the decimal point and the digits after it
+            tokens.erase(tokens.begin() + i, tokens.begin() + j);
+        } else {
+            // Handle case where the decimal point is not preceded by a number
+            std::cerr << "Error: Invalid input format" << std::endl;
+            // Add error handling as needed
+        }
     }
+}
     for(int i = 0; i<tokens.size(); i++){
         if(tokens[i].kind == '+'){
             double answer = tokens[i-1].value + tokens[i+1].value;
@@ -129,11 +149,11 @@ int main() {
             }
         }
         evaluateExpression(tokens);
-        std::cout << "Please enter a new expression: " << std::endl;
+        std::cout << "Enter a new expression or q to quit the program: " << std::endl;
         std::getline(std::cin, expression);
     }
     return 0;
 }
 
 
-//TODO : Add functionality for parentheses, decimals, and exponents
+//TODO : Add functionality for parentheses, negative numbers, remainder, and exponents, pre-defined symbolic values, and variables
